@@ -1,0 +1,5 @@
+env/
+__pycache__/
+
+db.squlite3
+media
