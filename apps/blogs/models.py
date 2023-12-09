@@ -1,6 +1,14 @@
 from django.db import models
 
+from django.contrib.auth.models import User
+
+
 class Blog(models.Model):
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        verbose_name="Пользователь",
+    )
     title = models.CharField(
         max_length=123,
         verbose_name="Название",
@@ -17,6 +25,7 @@ class Blog(models.Model):
     def __str__(self):
         return f"{self.title}"
     
+
     class Meta:
-        verbose_name = 'Блог'
-        verbose_name_plural = 'Блоги'
+        verbose_name = "Блог"
+        verbose_name_plural = "Блоги"
